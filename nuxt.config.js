@@ -14,7 +14,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        type: 'https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css',
+        href: 'https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css',
       },
     ],
   },
