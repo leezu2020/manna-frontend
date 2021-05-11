@@ -13,7 +13,15 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: theme => ({
+        'kakao-login': "url('~assets/kakao/kakao_login.png')"
+      }),
+      backgroundColor: theme => ({
+        ...theme('colors'),
+        'kakao-yellow': '#FEE500',
+      }),
+    },
   },
   variants: {
     extend: {},
