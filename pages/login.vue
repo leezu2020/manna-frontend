@@ -1,16 +1,22 @@
 <template>
-  <div class="min-h-screen bg-white text-gray-800 antialiased px-4 py-6 flex flex-col justify-center lg:py-12">
-    <div class="relative py-3 lg:max-w-full mx-auto text-center w-1/4">
-      <div class="relative bg-white text-left">
-        <div class="py-6 px-8">
-          <input type="text" placeholder="Email" class=" border-2 border-gray-400 w-full h-5 px-3 py-5 mt-4 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">
-          <input type="password" placeholder="Password" class=" border-2 border-gray-400 w-full h-5 px-3 py-5 mt-4 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">
-          <div class="flex flex-col">
-            <button class="h-10 mt-4 bg-indigo-500 text-white rounded-lg">Login</button>
-            <button class="h-10 mt-4 bg-kakao-login bg-no-repeat bg-contain bg-center bg-kakao-yellow rounded-lg"></button>
-            <a href="#" class="block mt-4 text-sm hover:underline">Forgot password?</a>
+  <div class="container l--table">
+    <div class="l--cell">
+      <div class="box box--s">
+        <h1 class="heading--title">로그인</h1>
+        <form class="form">
+          <div class="input--wrap">
+            <input type="text" placeholder="Email" class="input--text">
           </div>
-        </div>
+          <div class="input--wrap">
+            <input type="password" placeholder="Password" class="input--text">
+          </div>
+          <button class="btn--submit">로그인</button>
+        </form>
+        <button class="img--link mg--m">
+          <img src="../assets/imgaes/img_kakao_login_l.png" alt="카카오 로그인" class="img">
+        </button>
+        <NuxtLink to="/" class="l-block mg--xs text--s text--s--violet">비밀번호를 잊으셨나요?</NuxtLink>
+        <NuxtLink to="/join" class="l-block mg--xs text--s text--s--violet">회원가입</NuxtLink>
       </div>
     </div>
   </div>

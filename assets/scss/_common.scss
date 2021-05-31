@@ -1,0 +1,51 @@
+@charset 'UTF-8';
+
+// ====== layout ====== //
+.l--table {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.l--cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.l--flex--row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.l-block {
+    display: block;
+    width: 100%; 
+    height: auto;
+}
+
+
+// ====== style ====== //
+.pd--l { padding: 32px 0; }
+.pd--m { padding: 20px 0; }
+
+.mg--xl { margin: 72px 0; }
+.mg--m { margin: 20px 0; }
+.mg--xs { margin: 8px 0; }
+
+// ====== text ====== //
+.text--s {
+    font-family: $font--light;
+    font-size: $font--s;
+    line-height: $font--m;
+    &--violet { 
+        color: $color--violet;
+    }
+}
+
+
+// ====== img ====== //
+.img { 
+    width: 100%;
+    height: auto;
+}
+
