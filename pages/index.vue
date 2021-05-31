@@ -1,11 +1,19 @@
 <template>
-  <h1
-    class="title text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl md:text-8xl"
-  >
-    <div class="block test">🏃지금 당장</div>
-    <div class="block next-btn">만나요</div>
-    <div class="block">🌡36.5도씨</div>
-  </h1>
+  <div class="container container--home l--table">
+    <div class="l--cell">
+      <div class="box box--home">
+        <h1>
+          <p class="heading--title--home">지금 당장<i class="icon icon--right">🏃</i></p>
+          <NuxtLink to="/" class="btn--link btn--link--home">만나요</NuxtLink>
+          <p class="heading--title--home"><i class="icon icon--left">🌡</i>36.5도씨</p>
+        </h1>
+        <div class="l--flex--row mg--xl">
+          <NuxtLink to="/join" class="btn--link btn--link--account">회원가입</NuxtLink>
+          <NuxtLink to="/login" class="btn--link btn--link--account">로그인</NuxtLink>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -15,36 +23,5 @@ export default Vue.extend({})
 </script>
 
 <style>
-body {
-  background-color: #fffcf2;
-}
-.title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 240px;
-  margin-top: -170px;
-  text-align: right;
-  transform: translate(-50%, -50%);
 
-  -ms-user-select: none;
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-}
-.next-btn {
-  cursor: pointer;
-  border-radius: 15px;
-  padding: 5px 20px;
-  background: #fffcf2;
-  border: 5px solid;
-  color: rgba(79, 70, 229, var(--tw-text-opacity));
-  text-align: center;
-  &:hover {
-    background: rgba(79, 70, 229, var(--tw-text-opacity));
-    color: #fffcf2;
-    border: 5px solid rgba(79, 70, 229, var(--tw-text-opacity));
-  }
-}
 </style>

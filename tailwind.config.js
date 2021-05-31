@@ -12,7 +12,7 @@ module.exports = {
     ]
   },
   darkMode: false, // or 'media' or 'class'
-  theme: {
+  /*theme: {
     extend: {
       backgroundImage: theme => ({
         'kakao-login': "url('~assets/kakao/kakao_login.png')"
@@ -22,7 +22,7 @@ module.exports = {
         'kakao-yellow': '#FEE500',
       }),
     },
-  },
+  },*/
   variants: {
     extend: {},
   },
