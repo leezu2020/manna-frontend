@@ -6,21 +6,25 @@
       <h1 class="block mb-12 text-3xl font-bold text-blue-500 antialiased">
         만나기 위한 가입
       </h1>
-      <form class="space-y-4 font-normal font-normal text-gray-600">
+      <form class="space-y-4 font-normal text-gray-600">
+        <p class="text-blue-600 font-bold text-left">이메일</p>
         <input
-          type="text"
-          placeholder="아이디를 입력해 주세요"
+          type="email"
+          placeholder="이메일"
           class="block w-full h-12 pl-3 border border-gray-100 rounded-md hover:border-transparent hover:shadow-xl focus:border-blue-100"
-          v-model="ID"
+          v-model="Email"
         />
         <!-- 아이디 오류 출력 -->
         <span v-if="msg.ID" class="text-red-500">{{ msg.ID }}</span>
 
         <!-- 비밀번호 -->
         <div class="relative">
+          <p class="text-blue-600 font-bold text-left">
+            비밀번호 (8자 이상 입력해주세요.)
+          </p>
           <input
             type="password"
-            placeholder="비밀번호를 입력해 주세요"
+            placeholder="비밀번호"
             class="block w-full h-12 pl-3 border border-gray-100 rounded-md hover:border-transparent hover:shadow-xl focus:border-blue-400"
             v-model="Pwd"
           />
@@ -32,9 +36,10 @@
         <span v-if="msg.Pwd" class="text-red-500">{{ msg.Pwd }}</span>
 
         <div class="relative">
+          <p class="text-blue-600 font-bold text-left">비밀번호 확인</p>
           <input
             type="password"
-            placeholder="비밀번호를 한 번 더 입력해 주세요"
+            placeholder="비밀번호 확인"
             class="block w-full h-12 pl-3 border border-gray-100 rounded-md hover:border-transparent hover:shadow-xl focus:border-blue-400"
             v-model="PwdCheck"
           />
@@ -45,15 +50,19 @@
         <!-- 비밀번호 확인 오류 출력 -->
         <span v-if="msg.PwdCheck" class="text-red-500">{{ msg.PwdCheck }}</span>
 
+        <p class="text-blue-600 font-bold text-left">
+          만날 때 사용할 아이디를 입력해 주세요
+        </p>
         <input
-          type="email"
-          placeholder="이메일을 입력해 주세요"
+          type="text"
+          placeholder="아이디"
           class="block w-full h-12 pl-3 border border-gray-100 rounded-md hover:border-transparent hover:shadow-xl focus:border-blue-400"
-          v-model="Email"
+          v-model="ID"
         />
         <!-- 이메일 오류 출력 -->
         <span v-if="msg.Email" class="text-red-500">{{ msg.Email }}</span>
 
+        <p class="text-blue-600 font-bold text-left">성별</p>
         <fieldset class="block inline-flex">
           <div class="flex-1 inline-gird grid-cols-02 gap-x-4 mr-12">
             <label for="male" class="mr-1">남자</label>
@@ -83,7 +92,7 @@
           class="block w-full text-center h-12 rounded-md bg-blue-500 text-white font-bold tracking-widset hover:bg-blue-600 hover:shadow"
           @click.prevent="submitInfo()"
         >
-          SIGN UP!
+          회원가입 완료
         </button>
       </form>
     </div>
@@ -118,6 +127,11 @@ export default {
         gender: this.Gender,
       }
       console.log(info)
+      // api 통한 회원가입
+
+      // 회원가입 후, 로그인
+      // 약속 캘린더로 이동
+      this.$router.push('/calendar')
     },
     validateID(id) {
       if (id.length > 16) {

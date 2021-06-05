@@ -6,9 +6,10 @@
           <input type="text" placeholder="Email" class=" border-2 border-gray-400 w-full h-5 px-3 py-5 mt-4 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">
           <input type="password" placeholder="Password" class=" border-2 border-gray-400 w-full h-5 px-3 py-5 mt-4 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md">
           <div class="flex flex-col">
-            <button class="h-10 mt-4 bg-indigo-500 text-white rounded-lg">Login</button>
+            <button class="h-10 mt-4 bg-indigo-500 text-white rounded-lg">로그인</button>
             <button class="h-10 mt-4 bg-kakao-login bg-no-repeat bg-contain bg-center bg-kakao-yellow rounded-lg"></button>
-            <a href="#" class="block mt-4 text-sm hover:underline">Forgot password?</a>
+            <a href="#" class="block mt-4 text-sm hover:underline text-blue-700">비밀번호를 잊으셨나요?</a>
+            <nuxt-link to="/join" class="block mt-4 text-sm hover:underline text-blue-700">회원가입</nuxt-link>
           </div>
         </div>
       </div>
