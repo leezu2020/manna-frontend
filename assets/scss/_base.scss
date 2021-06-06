@@ -1,0 +1,39 @@
+@charset 'UTF-8';
+// ====== fonts ====== //
+@font-face {
+    font-family: "BCcardB";
+    src: url('/assets/fonts/BCcardB.otf') format("otf"),
+         url('/assets/fonts/BCcardB.ttf') format("ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "BCcardL";
+    src: url('../fonts/BCcardL.otf') format("otf"),
+         url('../fonts/BCcardL.ttf') format("ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+// ====== variables ====== //
+$font--bold : "BcCardB";
+$font--light : "BcCardL";
+$font--xl : 72px;
+$font--l : 48px;
+$font--m : 24px;
+$font--s : 16px;
+$font--xs : 10px;
+
+$bg--base : #fffcf2;
+$color--white : #ffffff;
+$color--black : #000000;
+$color--violet : #4f46e5;
+
+$radius--xxl : 100%;
+$radius--l : 12px;
+$radius--m : 6px;
+$radius--s : 4px;
+
+
+

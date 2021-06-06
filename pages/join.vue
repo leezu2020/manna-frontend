@@ -1,100 +1,80 @@
 <template>
-  <div class="w-screen h-auto bg-white">
-    <div
-      class="block container w-full max-w-sm box-content p-10 m-40 h-auto mx-auto rounded-xl text-center shadow"
-    >
-      <h1 class="block mb-12 text-3xl font-bold text-blue-500 antialiased">
-        만나기 위한 가입
-      </h1>
-      <form class="space-y-4 font-normal text-gray-600">
-        <p class="text-blue-600 font-bold text-left">이메일</p>
-        <input
-          type="email"
-          placeholder="이메일"
-          class="block w-full h-12 pl-3 border border-gray-100 rounded-md hover:border-transparent hover:shadow-xl focus:border-blue-100"
-          v-model="Email"
-        />
-        <!-- 아이디 오류 출력 -->
-        <span v-if="msg.ID" class="text-red-500">{{ msg.ID }}</span>
-
-        <!-- 비밀번호 -->
-        <div class="relative">
-          <p class="text-blue-600 font-bold text-left">
-            비밀번호 (8자 이상 입력해주세요.)
-          </p>
-          <input
-            type="password"
-            placeholder="비밀번호"
-            class="block w-full h-12 pl-3 border border-gray-100 rounded-md hover:border-transparent hover:shadow-xl focus:border-blue-400"
-            v-model="Pwd"
-          />
-          <i v-on:click="pwdUnlock" class="pwdBtn absolute top-3 right-1"
-            >보기</i
-          >
-        </div>
-        <!-- 비밀번호 오류 출력 -->
-        <span v-if="msg.Pwd" class="text-red-500">{{ msg.Pwd }}</span>
-
-        <div class="relative">
-          <p class="text-blue-600 font-bold text-left">비밀번호 확인</p>
-          <input
-            type="password"
-            placeholder="비밀번호 확인"
-            class="block w-full h-12 pl-3 border border-gray-100 rounded-md hover:border-transparent hover:shadow-xl focus:border-blue-400"
-            v-model="PwdCheck"
-          />
-          <i v-on:click="pwdUnlock" class="pwdBtn absolute top-3 right-1"
-            >보기</i
-          >
-        </div>
-        <!-- 비밀번호 확인 오류 출력 -->
-        <span v-if="msg.PwdCheck" class="text-red-500">{{ msg.PwdCheck }}</span>
-
-        <p class="text-blue-600 font-bold text-left">
-          만날 때 사용할 아이디를 입력해 주세요
-        </p>
-        <input
-          type="text"
-          placeholder="아이디"
-          class="block w-full h-12 pl-3 border border-gray-100 rounded-md hover:border-transparent hover:shadow-xl focus:border-blue-400"
-          v-model="ID"
-        />
-        <!-- 이메일 오류 출력 -->
-        <span v-if="msg.Email" class="text-red-500">{{ msg.Email }}</span>
-
-        <p class="text-blue-600 font-bold text-left">성별</p>
-        <fieldset class="block inline-flex">
-          <div class="flex-1 inline-gird grid-cols-02 gap-x-4 mr-12">
-            <label for="male" class="mr-1">남자</label>
+  <div class="container l--table">
+    <div class="l--cell">
+      <div class="box box--s">
+        <h1 class="heading--title">만나기 위한 가입</h1>
+        <form class="form">
+          <fieldset class="input--wrap">
+            <label for="userEmail" class="label">이메일</label>
             <input
-              type="radio"
-              id="man"
-              name="sex"
-              value="M"
-              v-model="Gender"
-              class="cursor-pointer transform delay-75 hover:scale-125"
+              id="userEmail"
+              type="email"
+              placeholder="이메일"
+              class="input--text"
             />
-          </div>
-          <div class="flex-2 inline-gird grid-cols-02 gap-x-4">
-            <label for="female" class="mr-1">여자</label>
+          </fieldset>
+          <fieldset class="input--wrap">
+            <label for="userPwd" class="label"
+              >비밀번호(8자 이상 입력해 주세요)</label
+            >
             <input
-              type="radio"
-              id="female"
-              name="sex"
-              value="F"
-              v-model="Gender"
-              class="cursor-pointer transform delay-75 hover:scale-125"
+              id="userPwd"
+              type="password"
+              placeholder="비밀번호"
+              minlength="8"
+              class="input--text"
             />
-          </div>
-        </fieldset>
-        <button
-          type="submit"
-          class="block w-full text-center h-12 rounded-md bg-blue-500 text-white font-bold tracking-widset hover:bg-blue-600 hover:shadow"
-          @click.prevent="submitInfo()"
-        >
-          회원가입 완료
-        </button>
-      </form>
+          </fieldset>
+          <fieldset class="input--wrap">
+            <label for="userId" class="label">비밀번호 확인</label>
+            <input
+              id="userPwd"
+              type="password"
+              placeholder="비밀번호 확인"
+              minlength="8"
+              class="input--text"
+            />
+          </fieldset>
+          <fieldset class="input--wrap">
+            <label for="userId" class="label"
+              >만날 때 사용할 아이디를 입력해 주세요</label
+            >
+            <input
+              id="userId"
+              type="text"
+              placeholder="20자 이하로 입력해 주세요"
+              maxlength="20"
+              class="input--text"
+            />
+          </fieldset>
+          <fieldset class="input--wrap">
+            <span class="label">성별</span>
+            <div class="l--flex--row jt--center">
+              <div class="checkbox--wrap">
+                <label for="male" class="label label--checkbox">남자</label>
+                <input
+                  type="radio"
+                  id="man"
+                  name="sex"
+                  value="man"
+                  class="input--checkbox"
+                />
+              </div>
+              <div class="checkbox--wrap">
+                <label for="female" class="label label--checkbox">여자</label>
+                <input
+                  type="radio"
+                  id="female"
+                  name="sex"
+                  value="woman"
+                  class="input--checkbox"
+                />
+              </div>
+            </div>
+          </fieldset>
+          <button type="submit" class="btn--submit mg--m" @click.prevent="submitInfo">회원가입 완료</button>
+        </form>
+      </div>
     </div>
   </div>
 </template>

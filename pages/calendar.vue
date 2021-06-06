@@ -1,59 +1,63 @@
 <template>
-  <div>
-    <div class="text-3xl text-center font-bold mt-10">약속 캘린더</div>
-    <div class="space-x-5">
-      <div class="grid grid-cols-6 p-10 m-10">
-        <div></div>
+  <div class="container">
+    <div class="box box--xl">
+      <h2 class="heading--title">약속 캘린더</h2>
+      <div class="l--flex--row jt--space pd--l">
         <!-- 캘린더 -->
-        <div class="col-span-2 p-5 border-4 border-red-400">
-          <no-ssr>
-            <v-date-picker
-              is-expanded
-              v-model="pickdate"
-              :attributes="attrs"
-              :model-config="modelConfig"
-              is-required
-            />
-          </no-ssr>
+        <div class="calendar l--table">
+          <div class="l--cell">
+            <no-ssr>
+              <v-date-picker
+                is-expanded
+                v-model="pickdate"
+                :attributes="attrs"
+                :model-config="modelConfig"
+                is-required
+              />
+            </no-ssr>
+          </div>
         </div>
         <!-- 날짜별 일정-->
-        <div class="col-span-3 p-5 text-center">
+        <div>
           <schedule :date="pickdate" />
         </div>
       </div>
-    </div>
-    <div class="text-center">
-      <nuxt-link
-        to="/register"
-        class="text-2xl bg-blue-700 text-white font-bold"
-        :date="pickdate"
-      >
-        이 날 약속 추가하기
-      </nuxt-link>
+      <!-- submit -->
+      <div class="text--center">
+        <nuxt-link
+          :to="{ name: 'register', params: { date: pickdate } }"
+          class="btn--submit btn--submit--m mg--m"
+        >
+          이 날 약속 추가하기
+        </nuxt-link>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Schedule from '~/components/Calendar/Schedule.vue'
+import VueMoment from 'vue-moment'
 
 export default {
   components: {
     Schedule,
+    VueMoment,
   },
   data() {
     return {
       isShow: false,
+      // 일정 날짜
       attrs: [
         {
           key: 'today',
           bar: 'red',
-          dates: new Date(2021, 6, 15),
+          dates: new Date(2021, 5, 15),
         },
       ],
       start: '',
       type: 'month',
-      pickdate: new Date(2021, 6, 5), // yyyy-mm-dd 형식으로 바꾸는법은?
+      pickdate: new Date(), // yyyy-mm-dd 형식으로 바꾸는법은?
       modelConfig: {
         type: 'string',
         mask: 'YYYY-MM-DD',

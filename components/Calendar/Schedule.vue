@@ -1,27 +1,29 @@
 <template>
-  <div>
-    <div class="col-span-4 font-bold text-xl p-3">{{ date }}의 일정</div>
-    <table class="border-3 border-green-300">
-      <colgroup>
-        <col style="width: 200px" />
-        <col style="width: 400px" />
-        <col style="width: 800px" />
-      </colgroup>
-      <thead class="font-bold text-2xl">
-        <tr class="pb-4">
-          <th >일정명</th>
-          <th >장소</th>
-          <th >참여자</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="a in appointments" :key="a.idx">
-          <td>{{ a.name }}</td>
-          <td>{{ a.location }}</td>
-          <td>{{ a.participants }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="schedule">
+    <div class="heading--title heading--title--s">{{ date }}의 일정</div>
+    <div class="table__wrap">
+      <table class="table">
+        <colgroup>
+          <col style="width: 200px" />
+          <col style="width: 400px" />
+          <col style="width: 800px" />
+        </colgroup>
+        <thead class="thead">
+          <tr class="tr">
+            <th class="th">일정명</th>
+            <th class="th">장소</th>
+            <th class="th">참여자</th>
+          </tr>
+        </thead>
+        <tbody class="tbody">
+          <tr class="tr" v-for="a in appointments" :key="a.idx">
+            <td class="td">{{ a.name }}</td>
+            <td class="td">{{ a.location }}</td>
+            <td class="td">{{ a.participants }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
