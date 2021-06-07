@@ -45,6 +45,10 @@ export default {
     VueMoment,
   },
   data() {
+    const today = new Date()
+    const year = today.getFullYear()
+    const month = today.getMonth() + 1
+    const date = today.getDate()
     return {
       isShow: false,
       // 일정 날짜
@@ -57,7 +61,7 @@ export default {
       ],
       start: '',
       type: 'month',
-      pickdate: new Date(), // yyyy-mm-dd 형식으로 바꾸는법은?
+      pickdate: year + '-' + month + '-' + date, // yyyy-mm-dd 형식으로 바꾸는법은?
       modelConfig: {
         type: 'string',
         mask: 'YYYY-MM-DD',
