@@ -9,6 +9,7 @@
             <input
               id="name"
               type="text"
+              v-model="promiseName"
               placeholder="30자 이하로 입력해 주세요"
               class="input--text input--text--white"
             />
@@ -21,14 +22,26 @@
                 수 있습니다.)</span
               >
             </label>
-            <input
-              id="date"
-              type="text"
-              placeholder="30자 이하로 입력해 주세요"
-              class="input--text input--text--white"
-              readonly="readonly"
-              v-model="date"
-            />
+
+            <div class="grid grid-cols-6 gap-4">
+              <div v-for="n in (1, 12)" :key="n">
+                <input type="radio" v-model="month" name="month" :value="n" />
+                {{ n }} 월
+              </div>
+            </div>
+            <!--
+            <div class="grid grid-flow-col gird-cols-6 grid-rows-2 gap-4">
+              <button
+                v-for="n in (1, 12)"
+                :key="n"
+                type="button"
+                class="rounded-xl bg-blue-400 text-white font-bold text-xl"
+                @click.prevent="getMonth(n)"
+              >
+                {{ n }} 월
+              </button>
+            </div>
+            -->
           </fieldset>
           <fieldset class="input--wrap">
             <label for="userEmail" class="label">
@@ -69,6 +82,7 @@
             <div class="inline__wrap">
               <span class="inline detail">오늘로부터</span
               ><input
+                v-model="due"
                 id="period"
                 type="number"
                 class="input--text input--text--white w--small inline"
@@ -89,9 +103,11 @@ export default {
   data() {
     return {
       participantTxt: '',
+      // 추후에 [] 으로 변경 예정
       participants: ['지금', '만나', '우리'],
       due: 1,
-      date: '',
+      month: '',
+      promiseName: '',
     }
   },
   created() {
@@ -105,9 +121,25 @@ export default {
     },
     regSchedule() {
       // api 통한 약속 만들기
-      console.log(this.$nuxt.context)
+      this.$store.dispatch('promise/addPromise', {
+        promiseName: this.promiseName,
+        month: this.month,
+        limitDatetime: this.calLimitDate(),
+        emails: this.participants,
+      })
       // calendar.vue페이지로 강제이동
       this.$router.push('/calendar')
+    },
+    calLimitDate() {
+      var now = new Date()
+      const dueDate = new Date(now.setDate(now.getDate() + parseInt(this.due)))
+      const year = dueDate.getFullYear()
+      const month = dueDate.getMonth() + 1
+      const date = dueDate.getDate()
+
+      console.log(dueDate, year, month, date, this.due)
+
+      return year + '-' + month + '-' + date
     },
   },
   watch: {

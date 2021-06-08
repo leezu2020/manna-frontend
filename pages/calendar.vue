@@ -24,11 +24,8 @@
       </div>
       <!-- submit -->
       <div class="text--center">
-        <nuxt-link
-          :to="{ name: 'register', params: { date: pickdate } }"
-          class="btn--submit btn--submit--m mg--m"
-        >
-          이 날 약속 추가하기
+        <nuxt-link to="/register" class="btn--submit btn--submit--m mg--m">
+          약속 추가하기
         </nuxt-link>
       </div>
     </div>
