@@ -2,7 +2,7 @@
   <div class="container l--table">
     <div class="l--cell">
       <div class="box box--m">
-        <h1 class="heading--title">약속 만들기</h1>
+        <h1 class="heading--title">약속 후보 등록</h1>
         <div class="form">
           <fieldset class="input--wrap">
             <label for="userEmail" class="label">약속명을 입력해 주세요.</label>
@@ -140,13 +140,6 @@ export default {
       console.log(dueDate, year, month, date, this.due)
 
       return year + '-' + month + '-' + date
-    },
-  },
-  watch: {
-    // 숫자만 입력
-    // 다른 방법 생각해보기
-    due: function () {
-      return (this.due = this.due.replace(/[^0-9]/g, ''))
     },
   },
 }
