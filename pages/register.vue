@@ -124,7 +124,7 @@ export default {
       this.$store.dispatch('promise/addPromise', {
         promiseName: this.promiseName,
         month: this.month,
-        limitDatetime: this.calLimitDate(),
+        limitDate: this.calLimitDate(),
         emails: this.participants,
       })
       // calendar.vue페이지로 강제이동
@@ -137,9 +137,15 @@ export default {
       const month = dueDate.getMonth() + 1
       const date = dueDate.getDate()
 
-      console.log(dueDate, year, month, date, this.due)
-
-      return year + '-' + month + '-' + date
+      return year + '-' + this.addZero(month) + '-' + this.addZero(date)
+    },
+    addZero(value) {
+      const temp = `${value}`
+      if (temp.length == 1) {
+        return '0' + temp
+      } else {
+        return temp
+      }
     },
   },
 }
