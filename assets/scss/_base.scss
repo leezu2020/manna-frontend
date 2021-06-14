@@ -2,16 +2,16 @@
 // ====== fonts ====== //
 @font-face {
     font-family: "BCcardB";
-    src: url(../fonts/BCcardB.otf)  format("otf"),
-         url(../fonts/BCcardB.ttf) format("ttf");
+    src: url('/assets/fonts/BCcardB.otf') format("otf"),
+         url('/assets/fonts/BCcardB.ttf') format("ttf");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "BCcardL";
-    src: url(../fonts/BCcardL.otf)  format("otf"),
-         url(../fonts/BCcardL.ttf) format("ttf");
+    src: url('../fonts/BCcardL.otf') format("otf"),
+         url('../fonts/BCcardL.ttf') format("ttf");
     font-weight: normal;
     font-style: normal;
 }

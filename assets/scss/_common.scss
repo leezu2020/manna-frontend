@@ -14,15 +14,34 @@
 .l--flex--row {
     display: flex;
     flex-direction: row;
+    // justify-content: center;
+    &.jt--space {
+        justify-content: space-between;
+    }
+    &.jt--center {
+        justify-content: center;
+    }
+}
+
+.l--flex--col {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
-.l-block {
+.l--block {
     display: block;
     width: 100%; 
     height: auto;
 }
 
+.inline__wrap {
+    width: 100%;
+    .inline {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
 
 // ====== style ====== //
 .pd--l { padding: 32px 0; }
@@ -40,6 +59,10 @@
     &--violet { 
         color: $color--violet;
     }
+}
+
+.text--center {
+    text-align: center;
 }
 
 
