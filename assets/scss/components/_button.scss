@@ -1,0 +1,87 @@
+/* === btn mixin === */
+@mixin btnSet ($width, $height, $font-size) {
+    display: inline-block;
+    width: $width;
+    height: $height;
+    line-height: $height;
+    border-radius: $radius--s;
+    text-align: center;
+    font-size: $font-size;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+@mixin btnColor($is-filled:true, $has-hover:true) {
+    @if $is-filled {
+        background-color: $color--violet;
+        border: 1px solid $color--violet;
+        color: $color--white;
+        @if $has-hover {
+            &:hover {
+                background-color: $color--white;
+                color: $color--violet;
+            }
+        }
+    }@else {
+        background-color: $color--white;
+        color: $color--violet;
+        border: 1px solid $color--violet;
+        @if $has-hover {
+            &:hover {
+                background-color: $color--violet;
+                color: $color--white;
+            }
+        }
+    }
+}
+
+/* === btn === */
+.btn {
+    &--submit {
+        @include btnSet (100%, 50px, $font--m);
+        @include btnColor ($is-filled: true, $has-hover: false);
+    }
+    &--submit--s {
+        @include btnSet (140px, 50px, $font--m);
+        @include btnColor ($is-filled: true, $has-hover: false);
+    }
+    &--submit--m {
+        @include btnSet (384px, 50px, $font--m);
+        @include btnColor ($is-filled: true, $has-hover: false);
+    }
+    &--link {
+        @include btnSet (100%, 50px, $font--m);
+        @include btnColor ($is-filled: false, $has-hover: true);
+    }
+    &--link--home {
+        @include btnSet (100%, 120px, $font--xl);
+        @include btnColor ($is-filled: false, $has-hover: true);
+        margin:48px 0;
+        background-color: $bg--base;
+        font-family: $font--bold;
+    }
+    &--link--account {
+        @include btnSet (100%, 50px, $font--m);
+        @include btnColor ($is-filled: false, $has-hover: false);
+        max-width: 200px;
+        background-color: $bg--base;
+                margin-right: 30px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &--cancel {
+        @include btnSet (100%, 50px, $font--m);
+        @include btnColor ($is-filled: false, $has-hover: false);
+    }
+    &--img {
+        @include btnSet (auto, auto, $font--m);
+        border: 0;
+        background: transparent;
+        padding: 0;
+    }
+}
+
+
+
+

@@ -1,4 +1,8 @@
+@charset "UTF-8";
+
 @import "reset";
 @import 'base';
 @import 'common';
-@import 'components';
+@import 'layout/__layout-dir';
+@import 'components/__components-dir';
+@import 'pages/__pages-dir';

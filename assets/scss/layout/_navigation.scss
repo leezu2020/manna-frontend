@@ -1,0 +1,26 @@
+@import '../base';
+@import '../common';
+
+.gnb {
+    width: 100%;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height:80px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0,.1);
+    .inner {
+        width: 100%;
+        max-width: 1440px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 5px 20px;
+    }
+    .menu {
+        margin: 0 30px;
+        font-size: $font--s;
+        line-height:70px;
+        color: $color--violet;
+    }
+}

@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+.heading--title {
+    margin-bottom: $font--l;
+    font-family: $font--bold;
+    font-size: $font--l;
+    color: $color--violet;
+    text-align: center;
+    &--home {
+        line-height: 100px;
+        font-size: $font--xl;
+        color: $color--black;
+    }
+    &--s {
+        font-size: $font--m;
+    }
+}
+
+.intro__btm {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 10px 0 30px;
+    text-align: center;
+    .txt {
+        margin-bottom: $font--s;
+        font-size: $font--s;
+        color: $color--violet;
+        letter-spacing: 3px;
+        opacity: 0.8;
+    }
+    .icon {
+        display: inline-block;
+        width: 20px;
+        height: auto;
+        opacity: 0.5;
+        @include animation(btmBounce, 2s, .5s, infinite);
+
+    }
+}
+
+.intro__txt {
+    .txt__wrap {
+        display: block;
+        width: auto;
+        height: auto;
+        padding: 8px 0px;
+        overflow: hidden;
+        .txt {
+            display: inline-block;
+            transform: translateY(150%);
+            animation-fill-mode: forwards;
+        }
+        @for $i from 1 to 6 {
+            &:nth-child(#{$i}) .txt {
+                @include animation(slideUp, 1.6s, $i * 1s, 1);
+            }
+        }
+    }
+
+}
+
+// ====== icon ====== //
+.icon {
+    display: inline-block;
+    &--xl {
+        font-size: 100px;
+    }
+    &--m {
+        font-size: 50px;
+    }
+    &.left {
+        margin-right: $font--m;
+    }
+    &.right {
+        margin-left: $font--m;
+    }
+}

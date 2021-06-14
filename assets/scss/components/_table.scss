@@ -1,0 +1,26 @@
+
+.table--col {
+    .tr {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 14px 0;
+        text-align: left;
+        font-size: $font--m;
+        .th {
+            width: 120px;
+            font-family: $font--bold;
+            color: $color--violet;
+        }
+        .td {
+            padding-left: 8px;
+            font-family: $font--light;
+            // detail, confirm
+            .value {
+                &.confirmed {
+                    @include roundedTxt($font--s, $is-selected:true);
+                }
+            }
+        }
+    }
+}

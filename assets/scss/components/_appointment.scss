@@ -1,0 +1,37 @@
+.appointment {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 20px;
+    padding: 20px;
+    background-color: $bg--base;
+    border-radius: $radius--l;
+    box-shadow: 0 5px 5px rgba(0, 0, 0,.4);
+    .date__box {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 20px;
+        padding: 14px;
+        background-color: $bg--base;
+        border: 2px solid rgba(79,70,229, .1);
+        border-radius: $radius--l;
+        text-align: center;
+        .month {
+            display: inline-block;
+            margin-bottom: 4px;
+            font-size: $font--s;
+            color: $color--red;
+        }
+        .date {
+            font-size: $font--l;
+            color: $color--violet;
+        }
+        .today {
+            font-size: $font--m;
+            color: #fff;
+        }
+        &-today {
+            background-color: $color--violet;
+        }
+    }
+    
+}

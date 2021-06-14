@@ -1,0 +1,44 @@
+.row {
+    margin-bottom: $font--xl;
+    &:last-child{
+        margin-bottom: 0;
+    }
+}
+
+.inform {
+    font-size: $font--m;
+    color: $color--violet;
+    &--time {
+        padding: 4px 0;
+        font-size: $font--m;
+        color: $color--black;
+        text-align: right;
+        .value {
+            display: inline-block;
+            width: auto;
+            margin: 0 8px;
+            font-size: $font--l;
+        }
+    }
+
+}
+
+.map__wrap {
+    display: block;
+    .map {
+        width:100%; 
+        height: auto;
+        margin: $font--l 0;
+        border-radius: $radius--l;
+        overflow: hidden;
+    }
+    .btn {
+        display: inline-block;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        border: 1px solid $color--violet;
+        border-radius: $radius--l;
+        text-align: center;
+    }
+}
